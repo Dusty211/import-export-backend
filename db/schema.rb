@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_03_185353) do
+ActiveRecord::Schema.define(version: 2019_04_03_190343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gamestates", force: :cascade do |t|
+    t.string "company_name"
+    t.integer "cash"
+    t.integer "luck"
+    t.integer "karma"
+    t.integer "heat"
+    t.integer "streetcred"
+    t.integer "xships"
+    t.integer "ship_lvl"
+    t.integer "xmercs"
+    t.string "savename"
+    t.string "avatar"
+    t.string "style"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_gamestates_on_user_id"
+  end
 
   create_table "job_options", force: :cascade do |t|
     t.string "option_text"
@@ -45,6 +64,15 @@ ActiveRecord::Schema.define(version: 2019_04_03_185353) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "gamestates", "users"
   add_foreign_key "job_options", "jobs"
   add_foreign_key "jobs", "npcs"
 end
