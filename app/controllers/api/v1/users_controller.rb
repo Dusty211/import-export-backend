@@ -2,10 +2,14 @@ class Api::V1::UsersController < ApplicationController
 
   skip_before_action :authorized, only: [:create]
 
-
-  def show
-    render json: User.find(params[:id])
+  def profile
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
+
+
+  # def show
+  #   render json: User.find(params[:id])
+  # end
 
   # pre auth
   # def create
