@@ -1,10 +1,12 @@
 class Api::V1::GamestatesController < ApplicationController
 
   def create
-    @gamestate = Gamestate.create(gamestate_params)
+    @gamestate = Gamestate.new(gamestate_params)
 
-    if @gamestate.valid?
-      render json: { gamestate: GameState.new(@gamestate) }, status: :created
+    # byebug
+
+    if @gamestate.save
+      render json: { gamestate: @gamestate }, status: :created
     else
       render json: { error: 'failed to create gamestate' }, status: :not_acceptable
     end
