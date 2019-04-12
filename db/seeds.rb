@@ -75,8 +75,8 @@ end
 
 npcs = [
   {name: "Average Person", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
-  {name: "Discheveled Person", min_streetcred: 20, max_streetcred: 85, npc_karma: 50},
-  {name: "Sort of Shady Person", min_streetcred: 30, max_streetcred: 100, npc_karma: 30},
+  # {name: "Discheveled Person", min_streetcred: 20, max_streetcred: 85, npc_karma: 50},
+  # {name: "Sort of Shady Person", min_streetcred: 30, max_streetcred: 100, npc_karma: 30},
   {name: "Moderately Shady Person", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
 ]
 
@@ -99,7 +99,7 @@ jobs = [
   # {npc_id: allNpcs[2].id, streetcred_mod: 3, cargo: "Stereo Equipment", cargo_value: 2000, job_text: stereo_equipment},
   # {npc_id: allNpcs[2].id, streetcred_mod: 3, cargo: "80s Memorabilia", cargo_value: 1500, job_text: eighties_memorabilia},
   # {npc_id: allNpcs[3].id, streetcred_mod: 6, cargo: "Donated car parts", cargo_value: 8000, job_text: car_parts},
-  {npc_id: allNpcs[3].id, streetcred_mod: 6, cargo: "Used jet skis", cargo_value: 8000, job_text: jet_skis}
+  {npc_id: allNpcs[1].id, streetcred_mod: 6, cargo: "Used jet skis", cargo_value: 8000, job_text: jet_skis}
 ]
 
 all_jobs = jobs.map {|job| Job.create(job)}
