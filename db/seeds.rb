@@ -74,10 +74,10 @@ end
 # ]
 
 npcs = [
-  {name: "Average Person", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
+  {name: "Tom Swanson", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
   # {name: "Discheveled Person", min_streetcred: 20, max_streetcred: 85, npc_karma: 50},
   # {name: "Sort of Shady Person", min_streetcred: 30, max_streetcred: 100, npc_karma: 30},
-  {name: "Moderately Shady Person", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
+  {name: "Big Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
 ]
 
 allNpcs = npcs.map {|npc| Npc.create(npc)}
