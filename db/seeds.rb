@@ -115,22 +115,22 @@ all_jobs = jobs.map {|job| Job.create(job)}
 job_options = [
   {job_id: all_jobs[0].id, morality: 3, criminality: 0, option_text: "That sounds like a great plan, Boss. Just fill this out and we'll get started."},
   {job_id: all_jobs[0].id, morality: -5, criminality: 0, option_text: "I'm trying to put a tennis court in behind my house and that's going to be wasted space on my boat. Let's talk figures..."},
-  {job_id: all_jobs[0].id, morality: 0, criminality: 3, option_text: "Get out of here before one of my other customers robs you."},
+  {job_id: all_jobs[0].id, morality: -3, criminality: 3, option_text: "Get out of here before one of my other customers robs you."},
   {job_id: all_jobs[0].id, morality: 10, criminality: 0, option_text: "I feel terrible about something I did earlier today. I'm going to pay it forward and ship these for you free of charge. That should make me feel less guilty."},
 
   {job_id: all_jobs[1].id, morality: 3, criminality: 0, option_text: "You betch'ya old buddy. "},
   {job_id: all_jobs[1].id, morality: -5, criminality: 0, option_text: "I'm worried about this job cutting into my bottom line. Can you do better on that figure?"},
-  {job_id: all_jobs[1].id, morality: 0, criminality: 3, option_text: "Oh... That was awkward. I thought you were talking to someone behind me who cares. *You casually turn and walk away*"},
+  {job_id: all_jobs[1].id, morality: -3, criminality: 3, option_text: "Oh... That was awkward. I thought you were talking to someone behind me who cares. *You casually turn and walk away*"},
   {job_id: all_jobs[1].id, morality: 10, criminality: 0, option_text: "This stuff is going towards building schools? Why didn't you say? This one's on me, friend."},
 
   {job_id: all_jobs[2].id, morality: 3, criminality: 0, option_text: "That sounds like a great plan, Boss. Just fill this out and we'll get started."},
   {job_id: all_jobs[2].id, morality: -5, criminality: 0, option_text: "I'm trying to put a tennis court in behind my house and that's going to be wasted space on my boat. Let's talk figures..."},
-  {job_id: all_jobs[2].id, morality: 0, criminality: 3, option_text: "Get out of here before one of my other customers robs you."},
+  {job_id: all_jobs[2].id, morality: -3, criminality: 3, option_text: "Get out of here before one of my other customers robs you."},
   {job_id: all_jobs[2].id, morality: 10, criminality: 0, option_text: "I feel terrible about something I did earlier today. I'm going to pay it forward and ship these for you free of charge. That should make me feel less guilty."},
 
   {job_id: all_jobs[3].id, morality: 3, criminality: 0, option_text: "You betch'ya old buddy. "},
   {job_id: all_jobs[3].id, morality: -5, criminality: 0, option_text: "I'm worried about this job cutting into my bottom line. Can you do better on that figure?"},
-  {job_id: all_jobs[3].id, morality: 0, criminality: 3, option_text: "Oh... That was awkward. I thought you were talking to someone behind me who cares. *You casually turn and walk away*"},
+  {job_id: all_jobs[3].id, morality: -3, criminality: 3, option_text: "Oh... That was awkward. I thought you were talking to someone behind me who cares. *You casually turn and walk away*"},
   {job_id: all_jobs[3].id, morality: 10, criminality: 0, option_text: "This stuff is going towards building schools? Why didn't you say? This one's on me, friend."},
 
   {job_id: all_jobs[4].id, morality: -5, criminality: 8, option_text: "I didn't see anything... I will be out getting pancakes later. That would be a good time to load the cargo."},
