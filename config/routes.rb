@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :gamestates, only: [:create]
+      resources :gamestates, only: [:create, :update]
       resources :users, only: [:create]
       resources :npcs, only: [:index]
       post '/login', to: 'auth#create'

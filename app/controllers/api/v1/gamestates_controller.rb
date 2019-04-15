@@ -3,14 +3,18 @@ class Api::V1::GamestatesController < ApplicationController
   def create
     @gamestate = Gamestate.new(gamestate_params)
 
-    # byebug
-
     if @gamestate.save
       render json: { gamestate: @gamestate }, status: :created
     else
       render json: { error: 'failed to create gamestate' }, status: :not_acceptable
     end
   end
+
+  def update
+    Gamestate.find(params[:id]).update(gamestate_params)
+    render json: { gamestate: Gamestate.find(params[:id]) }
+  end
+
 
   # def index
   #   render json: Gamestate.where(user_id: params[:user_id])
