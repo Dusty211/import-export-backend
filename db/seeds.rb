@@ -76,7 +76,7 @@ end
 npcs = [
   {name: "Tom Swanson", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
   {name: "Jon Smith", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
-  {name: "Lorp Tisdale", min_streetcred: 20, max_streetcred: 85, npc_karma: 50},
+  {name: "Lorp Tisdale", min_streetcred: 10, max_streetcred: 65, npc_karma: 50},
   {name: "Darden Pongo", min_streetcred: 30, max_streetcred: 100, npc_karma: 30},
   {name: "Big Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
   {name: "Little Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
