@@ -198,10 +198,10 @@ job_options = [
   {job_id: all_jobs[14].id, morality: -4, criminality: 4, option_text: "Are you sure you're in the right place buddy? The country club is on the other side of town. I'll show you on a map."},
   {job_id: all_jobs[14].id, morality: 6, criminality: -10, option_text: "I did something... Well, let's just say I want to redeem myself. Don't worry about the money. I've got this."},
 
-  {job_id: all_jobs[15].id, morality: 2, criminality: -8, option_text: "Wow...alright...obviously YOU can't keep a secret. I really need the streetcred, so Ok, fine..."},
-  {job_id: all_jobs[15].id, morality: 0, criminality: -5, option_text: "We just increased our prices yesterday. We haven't changed the signage yet."},
-  {job_id: all_jobs[15].id, morality: -4, criminality: 4, option_text: "You are literally the stupidest person I think I have ever had the misfortune to cross paths with. Please leave now."},
-  {job_id: all_jobs[15].id, morality: 6, criminality: -10, option_text: "*Your confusion overcomes you like a tidal wave* Just fill this out. I don't want to be tied to you financially, so don't worry about paying me."},
+  {job_id: all_jobs[14].id, morality: 2, criminality: -8, option_text: "I hope nobody sees this. I will do it, but let's just meet up later."},
+  {job_id: all_jobs[14].id, morality: 0, criminality: -5, option_text: "The more money you pay me, the more money I can put toward a good cause..."},
+  {job_id: all_jobs[14].id, morality: -4, criminality: 4, option_text: "Shouldn't you be coaching little league somewhere or something? You are wrecking my image right now bro. Please get out of here before someone sees you."},
+  {job_id: all_jobs[14].id, morality: 6, criminality: -10, option_text: "Will this offset that thing I did the other day? I guess let's see. This one's for charity."},
 ]
 
 all_job_options = job_options.map {|option| JobOption.create(option)}
