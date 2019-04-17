@@ -10,6 +10,14 @@ class Api::V1::GamestatesController < ApplicationController
     end
   end
 
+  def destroy
+    if Gamestate.destroy(params[:id])
+      render json: {destroyed: true}
+    else
+      render json: {destroyed: false}
+    end
+  end
+
   def update
     Gamestate.find(params[:id]).update(gamestate_params)
     render json: { gamestate: Gamestate.find(params[:id]) }
