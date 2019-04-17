@@ -80,6 +80,9 @@ npcs = [
   {name: "Darden Pongo", min_streetcred: 30, max_streetcred: 100, npc_karma: 30},
   {name: "Big Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
   {name: "Little Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
+  {name: "Coriander Whiplash DDS", min_streetcred: 0, max_streetcred: 50, npc_karma: 0},
+  {name: "Douglas Smallmouth", min_streetcred: 50, max_streetcred: 100, npc_karma: 100},
+
 ]
 
 allNpcs = npcs.map {|npc| Npc.create(npc)}
@@ -92,6 +95,11 @@ car_parts = "Wanna make some nice side cash? All I need is for you to get these 
 jet_skis = "Hey bro, I'm trying to get these jet skis on the water fast. They're from an... estate sale. Yeah. I got them for real cheap. Are you in?"
 duffel_bags = "I need to get a container of rare designer duffel bags to my overseas location. I heard you're the best at this sort of thing..."
 expedition = 'Hey old chap! I have some of the most elaborate and exclusive treasure and loot. These are for my private collection and I need to get them overseas for a special museam event.'
+replicas = "*Person who looks like they've been up for a week*: Hey...um....I like...have some replica watches and purses I need to ship here. Do you guys do financing?"
+documents = "Can you keep a secret? These documents I am trying to import from a friend overseas are forged. I need someone to get them back here..."
+medical= "I need to ship these supplies to the hurricane victims and you look like you could use a good deed or two... No offense."
+textbooks= "Lookin' for a ship to but these textbooks on... The more space these books take up, the less space... I'm going to cut my self off there."
+
 
 jobs = [
   {npc_id: allNpcs[0].id, streetcred_mod: -8, cargo: "Bananas", cargo_value: 1000, job_text: bananas},
@@ -106,6 +114,10 @@ jobs = [
   {npc_id: allNpcs[4].id, streetcred_mod: 8, cargo: "Duffel Bags", cargo_value: 14000, job_text: duffel_bags},
   {npc_id: allNpcs[5].id, streetcred_mod: 6, cargo: "Used jet skis", cargo_value: 8000, job_text: jet_skis},
   {npc_id: allNpcs[5].id, streetcred_mod: 8, cargo: "Duffel Bags", cargo_value: 14000, job_text: duffel_bags},
+  {npc_id: allNpcs[6].id, streetcred_mod: 10, cargo: "Replica Goods", cargo_value: 2000, job_text: replicas},
+  {npc_id: allNpcs[6].id, streetcred_mod: 10, cargo: "Counterfeit Documents", cargo_value: 5000, job_text: documents},
+  {npc_id: allNpcs[7].id, streetcred_mod: -10, cargo: "Medical Supplies", cargo_value: 8000, job_text: medical},
+  {npc_id: allNpcs[7].id, streetcred_mod: -10, cargo: "Textbooks", cargo_value: 2000, job_text: textbooks},
 ]
 
 all_jobs = jobs.map {|job| Job.create(job)}
@@ -170,6 +182,26 @@ job_options = [
   {job_id: all_jobs[11].id, morality: -8, criminality: 8, option_text: "I think im good man, unless..."},
   {job_id: all_jobs[11].id, morality: 10, criminality: -10, option_text: "I have just the thing for this... *You go to the back room and call the authorities*"},
   {job_id: all_jobs[11].id, morality: -10, criminality: 5, option_text: "Your money is no good here. Let's get this stuff on the boat."},
+
+  {job_id: all_jobs[12].id, morality: -2, criminality: 8, option_text: "I usually don't deal with idiots, but this time I will make an exception."},
+  {job_id: all_jobs[12].id, morality: -4, criminality: 10, option_text: "If you pay me extra, Santa will bring you extra stuff this year!"},
+  {job_id: all_jobs[12].id, morality: 4, criminality: -4, option_text: "Someone who reminded me of you came in the other day. I also asked them to leave... *you point toward the door*"},
+  {job_id: all_jobs[12].id, morality: -4, criminality: 0, option_text: "This is a good opportunity to get rep with the right people. I don't want your money. It will attract extra attention."},
+
+  {job_id: all_jobs[13].id, morality: -2, criminality: 8, option_text: "Wow...alright...obviously YOU can't keep a secret. I really need the streetcred, so Ok, fine..."},
+  {job_id: all_jobs[13].id, morality: -4, criminality: 10, option_text: "We just increased our prices yesterday. We haven't changed the signage yet."},
+  {job_id: all_jobs[13].id, morality: 4, criminality: -4, option_text: "You are literally the stupidest person I think I have ever had the misfortune to cross paths with. Please leave now."},
+  {job_id: all_jobs[13].id, morality: -4, criminality: 0, option_text: "*Your confusion overcomes you like a tidal wave* Just fill this out. I don't want to be tied to you financially, so don't worry about paying me."},
+
+  {job_id: all_jobs[14].id, morality: 2, criminality: -8, option_text: "I usually don't deal with people from your side of the tracks, but this is good money."},
+  {job_id: all_jobs[14].id, morality: 0, criminality: -5, option_text: "If you pay me a little extra, I will donate it to a charity of your choice..."},
+  {job_id: all_jobs[14].id, morality: -4, criminality: 4, option_text: "Are you sure you're in the right place buddy? The country club is on the other side of town. I'll show you on a map."},
+  {job_id: all_jobs[14].id, morality: 6, criminality: -10, option_text: "I did something... Well, let's just say I want to redeem myself. Don't worry about the money. I've got this."},
+
+  {job_id: all_jobs[15].id, morality: 2, criminality: -8, option_text: "Wow...alright...obviously YOU can't keep a secret. I really need the streetcred, so Ok, fine..."},
+  {job_id: all_jobs[15].id, morality: 0, criminality: -5, option_text: "We just increased our prices yesterday. We haven't changed the signage yet."},
+  {job_id: all_jobs[15].id, morality: -4, criminality: 4, option_text: "You are literally the stupidest person I think I have ever had the misfortune to cross paths with. Please leave now."},
+  {job_id: all_jobs[15].id, morality: 6, criminality: -10, option_text: "*Your confusion overcomes you like a tidal wave* Just fill this out. I don't want to be tied to you financially, so don't worry about paying me."},
 ]
 
 all_job_options = job_options.map {|option| JobOption.create(option)}
