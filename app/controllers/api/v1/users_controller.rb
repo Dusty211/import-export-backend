@@ -6,16 +6,6 @@ class Api::V1::UsersController < ApplicationController
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
-
-  # def show
-  #   render json: User.find(params[:id])
-  # end
-
-  # pre auth
-  # def create
-  #   render json: User.create(user_params)
-  # end
-
   def create
     @user = User.create(user_params)
     if @user.valid?
