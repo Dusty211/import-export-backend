@@ -1,16 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# User.destroy_all
-# Gamestate.destroy_all
-# Npc.destroy_all
-# Job.destroy_all
-# JobOption.destroy_all
 
 def rand_cash
   rand 400000..800000
@@ -61,17 +49,6 @@ end
 # end
 
 ############################################################
-
-# npcs = [
-#   {name: "Super Nice Person", min_streetcred: 0, max_streetcred: 30},
-#   {name: "Very Nice Person", min_streetcred: 0, max_streetcred: 50},
-#   {name: "Average Person", min_streetcred: 0, max_streetcred: 70},
-#   {name: "Discheveled Person", min_streetcred: 20, max_streetcred: 85},
-#   {name: "Sort of Shady Person", min_streetcred: 30, max_streetcred: 100},
-#   {name: "Moderately Shady Person", min_streetcred: 50, max_streetcred: 100},
-#   {name: "Master of Exceptional Shadiness", min_streetcred: 65, max_streetcred: 100},
-#   {name: "Dr. Evil", min_streetcred: 75, max_streetcred: 100}
-# ]
 
 npcs = [
   {name: "Tom Swanson", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
