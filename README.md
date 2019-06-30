@@ -27,49 +27,41 @@ The amount of creative freedom allowed by creating a game was also very appealin
 
 ## Code Examples:
 
-Below is the block of code that is responsible for the caching behavior of the arrival data. The data relationship between stations and arrivals is one to many, respectively. That is to say that a station has many arrivals, and an arrival belongs to a station. The last arrival update is timestamped in DateTime format on the station's table. This is what the code below is checking for. If the timestamp does not exist, or if it is older than 20 seconds, arrival data is fetched from WMATA's API. If the timestamp is newer than 20 seconds, no new API call is made, and the existing data is used.
+Below are some examples of game data that are in the db/seeds.rb file.
 
-#### Fetch new Data?
+To add context to the following code, the 'streetcred' of the npcs determines whether or not their missions will be available or not to you based on your character's current streetcred level. The 'npc_karma' will affect the success chance of the haggle dialog option (second option always) depending on how similar it is to your character's karma.
+
+On the Job example, the 'streetcred_mod' modifies the players current streetcred by the shown amount if the mission is successful.
+
+On the dialog options examples, the 'morality' and 'criminality' values affect your characters stats as soon as the option is chosen.
+
+#### NPC data and attributes in expandable seed file:
 
 ```ruby
-if !station.arrivals_updated
-  update_arrivals(station)
-  puts "/////////////////////////////////NEVER BEEN UPDATED"
-  return station.arrivals
-elsif DateTime.now.to_time - station.arrivals_updated.to_time > 20
-  station.arrivals.destroy_all
-  update_arrivals(station)
-  puts "/////////////////////////////////OVER 20 SECONDS OLD"
-  return station.arrivals
-else
-  puts "/////////////////////////////////FRESH ARRIVALS"
-  return station.arrivals
-end
+npcs = [
+  {name: "Tom Swanson", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
+  {name: "Jon Smith", min_streetcred: 0, max_streetcred: 70, npc_karma: 70},
+  {name: "Lorp Tisdale", min_streetcred: 10, max_streetcred: 65, npc_karma: 50},
+  {name: "Darden Pongo", min_streetcred: 30, max_streetcred: 100, npc_karma: 30},
+  {name: "Big Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
+  {name: "Little Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
+  {name: "Coriander Whiplash DDS", min_streetcred: 0, max_streetcred: 50, npc_karma: 0},
+  {name: "Douglas Smallmouth", min_streetcred: 50, max_streetcred: 100, npc_karma: 100},
+]
 ```
 
-#### update_arrivals:
+#### Job example:
 
 ```ruby
-def update_arrivals(station)
-  color = {
-    "GR" => "green",
-    "BL" => "blue",
-    "SV" => "silver",
-    "RD" => "red",
-    "OR" => "orange",
-    "YL" => "yellow"
-  }
-  UpdateDb.arrivals_data(station.code).each do |arrival|
-    new_arrival = Arrival.create(
-      cars: arrival["Car"],
-      destination: arrival["DestinationName"],
-      line: color[arrival["Line"]],
-      minutes: arrival["Min"]
-     )
-     station.arrivals << new_arrival
-  end
-  station.update!(arrivals_updated: DateTime.now)
-end
+{npc_id: allNpcs[5].id, streetcred_mod: 6, cargo: "Used jet skis", cargo_value: 8000, job_text: jet_skis}
+```
+
+#### Dialog options example:
+```ruby
+{job_id: all_jobs[7].id, morality: -5, criminality: 8, option_text: "*You chuckle* Hey man, I don't wanna know... You should probably load those at night."},
+{job_id: all_jobs[7].id, morality: -5, criminality: 8, option_text: "I really like shipping cars, but I like money better..."},
+{job_id: all_jobs[7].id, morality: 7, criminality: -7, option_text: "*You press a button under the counter to make a bunch of mercenaries seemingly appear from nowhere*"},
+{job_id: all_jobs[7].id, morality: -4, criminality: 5, option_text: "How about I just take one of those coupes instead of cash?"},
 ```
 
 ## Development Environment Installation

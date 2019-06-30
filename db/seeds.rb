@@ -59,7 +59,6 @@ npcs = [
   {name: "Little Cruz", min_streetcred: 50, max_streetcred: 100, npc_karma: 10},
   {name: "Coriander Whiplash DDS", min_streetcred: 0, max_streetcred: 50, npc_karma: 0},
   {name: "Douglas Smallmouth", min_streetcred: 50, max_streetcred: 100, npc_karma: 100},
-
 ]
 
 allNpcs = npcs.map {|npc| Npc.create(npc)}
