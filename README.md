@@ -29,7 +29,7 @@ The amount of creative freedom allowed by creating a game was also very appealin
 
 Below are some examples of game data that are in the db/seeds.rb file.
 
-To add context to the following code, the 'streetcred' of the npcs determines whether or not their missions will be available or not to you based on your character's current streetcred level. The 'npc_karma' will affect the success chance of the haggle dialog option (second option always) depending on how similar it is to your character's karma.
+To add context to the following code, the 'streetcred' of the npcs determines whether or not their missions will be available to you based on your character's current streetcred level. The 'npc_karma' will affect the success chance of the haggle dialog option (always the second option), depending on how similar it is to your character's karma.
 
 On the Job example, the 'streetcred_mod' modifies the players current streetcred by the shown amount if the mission is successful.
 
