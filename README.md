@@ -1,7 +1,7 @@
 [Import/Export (Front End)](https://github.com/Dusty211/import-export-frontend)
 
 ## Import/Export (Back End)
-
+This is the Rails back end API for the Import/Export game. The API provides a user specific experience by using JWT tokens and OAuth.  It also provides the database integration that saves all of the game files and persists the game state as the user plays.
 
 ## Features
 - Fully persistent game files automatically save your progress as you play
